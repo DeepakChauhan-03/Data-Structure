@@ -25,6 +25,8 @@ Node *addAtLast(Node *head, int data){
         }
         temp->next=newNode;
     }
+    cout<<"\nNode added success at the end of singlt Linked List\n";
+    return head;
 }
 
 void display(Node *head){
