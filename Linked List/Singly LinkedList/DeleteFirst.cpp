@@ -41,6 +41,7 @@ int main(){
       cout<<"\nSingly Linked list Data ";
      display(head);
      
+     cout<<"\nSingly Linked list after deleting first element";
      head = deleteFirstNode(head);
      cout<<"\n";
      display(head);
