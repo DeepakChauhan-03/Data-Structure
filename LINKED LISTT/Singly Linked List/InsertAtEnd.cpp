@@ -33,7 +33,7 @@ void insertAtEnd(int x)
     newNode->next = NULL;
 
     Node *temp = head;
-    while(temp->next!= NULL)
+    while(temp->next !=NULL)
     {
       temp = temp->next;
     }
