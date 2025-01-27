@@ -20,6 +20,6 @@ int main(){
     a.next = &b;
     b.next = &c;
     c.next = &d;
-
+    
     return 0;
 }
