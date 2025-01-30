@@ -11,6 +11,14 @@ class Node{
     cout<<"Linked list is created"<<endl;
   }
 };
+void insertAtEnd(Node *head, int val){
+  Node *t = new Node(val);
+  while(head->next!=NULL){
+    head = head->next;
+   // head->next = t;
+  }
+  head->next = t;
+}
 int main(){
     Node *a = new Node(10);
     Node *b = new Node(20);
@@ -20,7 +28,8 @@ int main(){
     a->next = b;
     b->next = c;
     c->next = d;
-
+    
+  insertAtEnd(a,60);
      Node *temp = a;
     while (temp!=NULL)
     {
