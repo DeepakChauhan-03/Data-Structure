@@ -21,6 +21,8 @@ class LinkedList{
         head = tail = NULL;
         size = 0;
     }
+
+    // 1 2 3 4 5 6
     void insertAtEnd(int val){
         Node *temp = new Node(val);
         if(size==0) head = tail = temp;
