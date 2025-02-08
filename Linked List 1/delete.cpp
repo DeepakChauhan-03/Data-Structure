@@ -1,5 +1,4 @@
-//WAP to insert element at any specific position in a linked list
-//WAP to insert Node at the beggining of the Linked List
+//WAP to delete node from starting , end and at a specific position in a linkedlist
 #include<iostream>
 using namespace std;
 class Node{
@@ -64,6 +63,51 @@ class LinkedList{
         }
       cout<<endl;
     }
+ //delete At Head
+ void deleteAthead(){
+    if(size==0){
+        cout<<"List is empty";
+        return;
+    }
+    head = head->next;
+    size--;
+ }
+ //delete At tail
+ void deleteAtTail(){
+    if(size==0){
+        cout<<"list is empty";
+        return;
+    }
+    Node *temp = head;
+    while(temp->next!=tail){
+        temp = temp->next;
+    }
+    temp->next = NULL;
+    tail = temp;
+    size--;
+ }
+ //delete AT specific position
+ void deleteAtIdx(int idx){
+    if(idx<0 || idx>=size){
+        cout<<"invalid index";
+        return;
+    }
+    else if(size==0){
+        cout<<"List is empty";
+        return;
+    }
+    else if(idx==0)  return deleteAthead();
+    else if(idx==size-1)  return deleteAtTail();
+
+    else{
+        Node *temp = head;
+        for(int i=1; i<=idx-1; i++){
+            temp = temp->next;
+        }
+        temp->next = temp->next->next;
+        size--;
+    }
+ }
 };
 int main(){
     LinkedList ll;
@@ -73,6 +117,8 @@ int main(){
     ll.insertAtEnd(30);
     ll.display();
     ll.insertAtIdx(2,69);
+    ll.display();
+    ll.deleteAtIdx(4);
     ll.display();
     return 0;
 }
